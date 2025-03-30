@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Logout
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Logout</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="logoutWrapper">
+    <ion-list class="logoutList">
+      <div class="logoutMessage">
+        <h2>Leaving so soon, {{ userName }}?</h2>
+        <p>We're sad to see you go. Come back soon!</p>
+      </div>
+      <ion-button class="logoutBtn" (click)="logoutUser()">Logout</ion-button>
+    </ion-list>
+  </div>
+</ion-content>

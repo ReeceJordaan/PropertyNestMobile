@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="loginContent">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+    <ion-list class="loginList">
+      <ion-item>
+        <ion-input [id]="emailInputId" formControlName="email" label="Email" type="email"></ion-input>
+      </ion-item>
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        <ion-text color="danger">Email is required and must be valid</ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input [id]="passwordInputId" formControlName="password" label="Password" type="password"></ion-input>
+      </ion-item>
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <ion-text color="danger">Password is required</ion-text>
+      </div>
+
+      <ion-button type="submit" class="loginBtn" [disabled]="loginForm.invalid">Login</ion-button>
+      <ion-text class="loginError" color="danger" style="display: none;">Incorrect email or password.</ion-text>
+    </ion-list>
+  </form>
+</ion-content>

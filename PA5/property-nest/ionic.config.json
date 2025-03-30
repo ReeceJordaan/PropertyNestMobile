@@ -1,0 +1,7 @@
+{
+  "name": "PropertyNest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
